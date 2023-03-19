@@ -54,6 +54,13 @@ module.exports = {
                     children:[
                         {title:'handWrite',path:'handWrite'}
                     ]
+                },
+                {
+                    title:'http',
+                    collapsable:true,
+                    children:[
+                        {title:'http',path:'http'}
+                    ]
                 }
             ],
             '/guide/algorithm/':[
