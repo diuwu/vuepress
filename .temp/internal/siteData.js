@@ -23,7 +23,8 @@ export const siteData = {
         "actionText": "开始复习 →",
         "actionLink": "/guide/vue/",
         "features": null,
-        "footer": "粤ICP备2022042038号-1"
+        "footer": "粤ICP备2022042038号-1",
+        "footerLink": "baidu.com"
       },
       "regularPath": "/",
       "relativePath": "README.md",
@@ -32,10 +33,42 @@ export const siteData = {
     },
     {
       "frontmatter": {},
-      "regularPath": "/guide/",
-      "relativePath": "guide/README.md",
-      "key": "v-50ce8d8a",
-      "path": "/guide/"
+      "regularPath": "/guide/interview/",
+      "relativePath": "guide/interview/README.md",
+      "key": "v-ab761cf8",
+      "path": "/guide/interview/"
+    },
+    {
+      "title": "算法题",
+      "frontmatter": {},
+      "regularPath": "/guide/algorithm/algorithm.html",
+      "relativePath": "guide/algorithm/algorithm.md",
+      "key": "v-2c4e7cce",
+      "path": "/guide/algorithm/algorithm.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "栈",
+          "slug": "栈"
+        },
+        {
+          "level": 3,
+          "title": "二叉树的遍历",
+          "slug": "二叉树的遍历"
+        },
+        {
+          "level": 3,
+          "title": "用栈实现队列",
+          "slug": "用栈实现队列"
+        }
+      ]
+    },
+    {
+      "frontmatter": {},
+      "regularPath": "/guide/algorithm/",
+      "relativePath": "guide/algorithm/README.md",
+      "key": "v-14d124a8",
+      "path": "/guide/algorithm/"
     },
     {
       "title": "各种手写题",
@@ -69,42 +102,10 @@ export const siteData = {
     },
     {
       "frontmatter": {},
-      "regularPath": "/guide/algorithm/",
-      "relativePath": "guide/algorithm/README.md",
-      "key": "v-14d124a8",
-      "path": "/guide/algorithm/"
-    },
-    {
-      "title": "算法题",
-      "frontmatter": {},
-      "regularPath": "/guide/algorithm/algorithm.html",
-      "relativePath": "guide/algorithm/algorithm.md",
-      "key": "v-2c4e7cce",
-      "path": "/guide/algorithm/algorithm.html",
-      "headers": [
-        {
-          "level": 2,
-          "title": "栈",
-          "slug": "栈"
-        },
-        {
-          "level": 3,
-          "title": "二叉树的遍历",
-          "slug": "二叉树的遍历"
-        },
-        {
-          "level": 3,
-          "title": "用栈实现队列",
-          "slug": "用栈实现队列"
-        }
-      ]
-    },
-    {
-      "frontmatter": {},
-      "regularPath": "/guide/interview/",
-      "relativePath": "guide/interview/README.md",
-      "key": "v-ab761cf8",
-      "path": "/guide/interview/"
+      "regularPath": "/guide/",
+      "relativePath": "guide/README.md",
+      "key": "v-50ce8d8a",
+      "path": "/guide/"
     },
     {
       "title": "开始",
@@ -113,6 +114,14 @@ export const siteData = {
       "relativePath": "guide/vue/README.md",
       "key": "v-2837a3ba",
       "path": "/guide/vue/"
+    },
+    {
+      "title": "1",
+      "frontmatter": {},
+      "regularPath": "/guide/interview/interview.html",
+      "relativePath": "guide/interview/interview.md",
+      "key": "v-626b01ce",
+      "path": "/guide/interview/interview.html"
     },
     {
       "title": "Vue-cli",
@@ -146,101 +155,6 @@ export const siteData = {
           "level": 2,
           "title": "CLI3的配置",
           "slug": "cli3的配置"
-        }
-      ]
-    },
-    {
-      "title": "简单认识Vue",
-      "frontmatter": {},
-      "regularPath": "/guide/vue/Vue.html",
-      "relativePath": "guide/vue/Vue.md",
-      "key": "v-6379a499",
-      "path": "/guide/vue/Vue.html",
-      "headers": [
-        {
-          "level": 2,
-          "title": "简单认识Vue",
-          "slug": "简单认识vue"
-        },
-        {
-          "level": 2,
-          "title": "Vue中的MVVM",
-          "slug": "vue中的mvvm"
-        },
-        {
-          "level": 2,
-          "title": "Vue的options",
-          "slug": "vue的options"
-        },
-        {
-          "level": 2,
-          "title": "Vue的生命周期",
-          "slug": "vue的生命周期"
-        },
-        {
-          "level": 2,
-          "title": "Vue插值操作",
-          "slug": "vue插值操作"
-        },
-        {
-          "level": 2,
-          "title": "v-bind",
-          "slug": "v-bind"
-        },
-        {
-          "level": 2,
-          "title": "Vue计算属性",
-          "slug": "vue计算属性"
-        },
-        {
-          "level": 2,
-          "title": "ES6 块级作用域let和var和const",
-          "slug": "es6-块级作用域let和var和const"
-        },
-        {
-          "level": 2,
-          "title": "ES6 const的使用和注意",
-          "slug": "es6-const的使用和注意"
-        },
-        {
-          "level": 2,
-          "title": "ES6 字面量增强写法",
-          "slug": "es6-字面量增强写法"
-        },
-        {
-          "level": 2,
-          "title": "Vue事件监听",
-          "slug": "vue事件监听"
-        },
-        {
-          "level": 2,
-          "title": "条件判断",
-          "slug": "条件判断"
-        },
-        {
-          "level": 2,
-          "title": "循环遍历",
-          "slug": "循环遍历"
-        },
-        {
-          "level": 2,
-          "title": "JS高阶函数",
-          "slug": "js高阶函数"
-        },
-        {
-          "level": 2,
-          "title": "表单绑定 v-model",
-          "slug": "表单绑定-v-model"
-        },
-        {
-          "level": 2,
-          "title": "Vue组件化思想",
-          "slug": "vue组件化思想"
-        },
-        {
-          "level": 2,
-          "title": "模块化开发",
-          "slug": "模块化开发"
         }
       ]
     },
@@ -425,11 +339,107 @@ export const siteData = {
       ]
     },
     {
+      "title": "HTPP",
       "frontmatter": {},
-      "regularPath": "/guide/webpack/",
-      "relativePath": "guide/webpack/README.md",
-      "key": "v-4454162c",
-      "path": "/guide/webpack/"
+      "regularPath": "/guide/interview/http.html",
+      "relativePath": "guide/interview/http.md",
+      "key": "v-0b4c6cf3",
+      "path": "/guide/interview/http.html"
+    },
+    {
+      "title": "简单认识Vue",
+      "frontmatter": {},
+      "regularPath": "/guide/vue/Vue.html",
+      "relativePath": "guide/vue/Vue.md",
+      "key": "v-6379a499",
+      "path": "/guide/vue/Vue.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "简单认识Vue",
+          "slug": "简单认识vue"
+        },
+        {
+          "level": 2,
+          "title": "Vue中的MVVM",
+          "slug": "vue中的mvvm"
+        },
+        {
+          "level": 2,
+          "title": "Vue的options",
+          "slug": "vue的options"
+        },
+        {
+          "level": 2,
+          "title": "Vue的生命周期",
+          "slug": "vue的生命周期"
+        },
+        {
+          "level": 2,
+          "title": "Vue插值操作",
+          "slug": "vue插值操作"
+        },
+        {
+          "level": 2,
+          "title": "v-bind",
+          "slug": "v-bind"
+        },
+        {
+          "level": 2,
+          "title": "Vue计算属性",
+          "slug": "vue计算属性"
+        },
+        {
+          "level": 2,
+          "title": "ES6 块级作用域let和var和const",
+          "slug": "es6-块级作用域let和var和const"
+        },
+        {
+          "level": 2,
+          "title": "ES6 const的使用和注意",
+          "slug": "es6-const的使用和注意"
+        },
+        {
+          "level": 2,
+          "title": "ES6 字面量增强写法",
+          "slug": "es6-字面量增强写法"
+        },
+        {
+          "level": 2,
+          "title": "Vue事件监听",
+          "slug": "vue事件监听"
+        },
+        {
+          "level": 2,
+          "title": "条件判断",
+          "slug": "条件判断"
+        },
+        {
+          "level": 2,
+          "title": "循环遍历",
+          "slug": "循环遍历"
+        },
+        {
+          "level": 2,
+          "title": "JS高阶函数",
+          "slug": "js高阶函数"
+        },
+        {
+          "level": 2,
+          "title": "表单绑定 v-model",
+          "slug": "表单绑定-v-model"
+        },
+        {
+          "level": 2,
+          "title": "Vue组件化思想",
+          "slug": "vue组件化思想"
+        },
+        {
+          "level": 2,
+          "title": "模块化开发",
+          "slug": "模块化开发"
+        }
+      ]
     },
     {
       "title": "webpack学习",
@@ -575,6 +585,13 @@ export const siteData = {
           "slug": "开发模式"
         }
       ]
+    },
+    {
+      "frontmatter": {},
+      "regularPath": "/guide/webpack/",
+      "relativePath": "guide/webpack/README.md",
+      "key": "v-4454162c",
+      "path": "/guide/webpack/"
     },
     {
       "title": "小程序的配置文件",
@@ -742,14 +759,6 @@ export const siteData = {
       "relativePath": "guide/weixin/README.md",
       "key": "v-64d93d98",
       "path": "/guide/weixin/"
-    },
-    {
-      "title": "1",
-      "frontmatter": {},
-      "regularPath": "/guide/interview/interview.html",
-      "relativePath": "guide/interview/interview.md",
-      "key": "v-626b01ce",
-      "path": "/guide/interview/interview.html"
     }
   ],
   "themeConfig": {
@@ -833,6 +842,16 @@ export const siteData = {
             {
               "title": "handWrite",
               "path": "handWrite"
+            }
+          ]
+        },
+        {
+          "title": "http",
+          "collapsable": true,
+          "children": [
+            {
+              "title": "http",
+              "path": "http"
             }
           ]
         }

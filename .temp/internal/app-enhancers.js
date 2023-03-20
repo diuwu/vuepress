@@ -1,6 +1,6 @@
 import m0 from "C:\\Users\\bush\\Desktop\\练习\\vuepress\\.temp\\app-enhancers\\0.js"
 import m1 from "C:\\Users\\bush\\Desktop\\练习\\vuepress\\.temp\\app-enhancers\\data-block.js"
-import m2 from "C:\\Users\\bush\\Desktop\\练习\\vuepress\\.temp\\app-enhancers\\global-components-5.js"
+import m2 from "C:\\Users\\bush\\Desktop\\练习\\vuepress\\.temp\\app-enhancers\\global-components-1.js"
 import m3 from "C:\\Users\\bush\\Desktop\\练习\\vuepress\\.temp\\app-enhancers\\1.js"
 
 export default [

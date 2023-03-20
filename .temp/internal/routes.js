@@ -21,23 +21,23 @@ export const routes = [
     redirect: "/"
   },
   {
-    name: "v-50ce8d8a",
-    path: "/guide/",
+    name: "v-ab761cf8",
+    path: "/guide/interview/",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-50ce8d8a").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-ab761cf8").then(next)
     },
   },
   {
-    path: "/guide/index.html",
-    redirect: "/guide/"
+    path: "/guide/interview/index.html",
+    redirect: "/guide/interview/"
   },
   {
-    name: "v-320ace8e",
-    path: "/guide/interview/handWrite.html",
+    name: "v-2c4e7cce",
+    path: "/guide/algorithm/algorithm.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-320ace8e").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-2c4e7cce").then(next)
     },
   },
   {
@@ -53,24 +53,24 @@ export const routes = [
     redirect: "/guide/algorithm/"
   },
   {
-    name: "v-2c4e7cce",
-    path: "/guide/algorithm/algorithm.html",
+    name: "v-320ace8e",
+    path: "/guide/interview/handWrite.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-2c4e7cce").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-320ace8e").then(next)
     },
   },
   {
-    name: "v-ab761cf8",
-    path: "/guide/interview/",
+    name: "v-50ce8d8a",
+    path: "/guide/",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-ab761cf8").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-50ce8d8a").then(next)
     },
   },
   {
-    path: "/guide/interview/index.html",
-    redirect: "/guide/interview/"
+    path: "/guide/index.html",
+    redirect: "/guide/"
   },
   {
     name: "v-2837a3ba",
@@ -85,19 +85,19 @@ export const routes = [
     redirect: "/guide/vue/"
   },
   {
+    name: "v-626b01ce",
+    path: "/guide/interview/interview.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-626b01ce").then(next)
+    },
+  },
+  {
     name: "v-e6931a8e",
     path: "/guide/vue/Vue-Cli.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-e6931a8e").then(next)
-    },
-  },
-  {
-    name: "v-6379a499",
-    path: "/guide/vue/Vue.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-6379a499").then(next)
     },
   },
   {
@@ -117,6 +117,30 @@ export const routes = [
     },
   },
   {
+    name: "v-0b4c6cf3",
+    path: "/guide/interview/http.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-0b4c6cf3").then(next)
+    },
+  },
+  {
+    name: "v-6379a499",
+    path: "/guide/vue/Vue.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-6379a499").then(next)
+    },
+  },
+  {
+    name: "v-00269a59",
+    path: "/guide/webpack/Webpack.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-00269a59").then(next)
+    },
+  },
+  {
     name: "v-4454162c",
     path: "/guide/webpack/",
     component: GlobalLayout,
@@ -127,14 +151,6 @@ export const routes = [
   {
     path: "/guide/webpack/index.html",
     redirect: "/guide/webpack/"
-  },
-  {
-    name: "v-00269a59",
-    path: "/guide/webpack/Webpack.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-00269a59").then(next)
-    },
   },
   {
     name: "v-fd86c45a",
@@ -155,14 +171,6 @@ export const routes = [
   {
     path: "/guide/weixin/index.html",
     redirect: "/guide/weixin/"
-  },
-  {
-    name: "v-626b01ce",
-    path: "/guide/interview/interview.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-626b01ce").then(next)
-    },
   },
   {
     path: '*',
