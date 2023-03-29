@@ -32,13 +32,6 @@ export const siteData = {
       "path": "/"
     },
     {
-      "frontmatter": {},
-      "regularPath": "/guide/interview/",
-      "relativePath": "guide/interview/README.md",
-      "key": "v-ab761cf8",
-      "path": "/guide/interview/"
-    },
-    {
       "title": "算法题",
       "frontmatter": {},
       "regularPath": "/guide/algorithm/algorithm.html",
@@ -65,10 +58,24 @@ export const siteData = {
     },
     {
       "frontmatter": {},
+      "regularPath": "/guide/",
+      "relativePath": "guide/README.md",
+      "key": "v-50ce8d8a",
+      "path": "/guide/"
+    },
+    {
+      "frontmatter": {},
       "regularPath": "/guide/algorithm/",
       "relativePath": "guide/algorithm/README.md",
       "key": "v-14d124a8",
       "path": "/guide/algorithm/"
+    },
+    {
+      "frontmatter": {},
+      "regularPath": "/guide/interview/",
+      "relativePath": "guide/interview/README.md",
+      "key": "v-ab761cf8",
+      "path": "/guide/interview/"
     },
     {
       "title": "各种手写题",
@@ -101,11 +108,72 @@ export const siteData = {
       ]
     },
     {
+      "title": "HTPP",
       "frontmatter": {},
-      "regularPath": "/guide/",
-      "relativePath": "guide/README.md",
-      "key": "v-50ce8d8a",
-      "path": "/guide/"
+      "regularPath": "/guide/interview/http.html",
+      "relativePath": "guide/interview/http.md",
+      "key": "v-0b4c6cf3",
+      "path": "/guide/interview/http.html"
+    },
+    {
+      "title": "promise.resolve()",
+      "frontmatter": {},
+      "regularPath": "/guide/interview/promise.html",
+      "relativePath": "guide/interview/promise.md",
+      "key": "v-9450c64e",
+      "path": "/guide/interview/promise.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "promise.resolve()",
+          "slug": "promise-resolve"
+        },
+        {
+          "level": 2,
+          "title": "promise.reject()",
+          "slug": "promise-reject"
+        },
+        {
+          "level": 2,
+          "title": "promise.prototype.then()",
+          "slug": "promise-prototype-then"
+        },
+        {
+          "level": 2,
+          "title": "promise",
+          "slug": "promise"
+        },
+        {
+          "level": 2,
+          "title": "promise.all()",
+          "slug": "promise-all"
+        },
+        {
+          "level": 2,
+          "title": "promise.allSettled()",
+          "slug": "promise-allsettled"
+        },
+        {
+          "level": 2,
+          "title": "promise.race()",
+          "slug": "promise-race"
+        },
+        {
+          "level": 2,
+          "title": "promise.any()",
+          "slug": "promise-any"
+        },
+        {
+          "level": 2,
+          "title": "promise.prototype.catch()",
+          "slug": "promise-prototype-catch"
+        },
+        {
+          "level": 2,
+          "title": "promise.prototype.finally()",
+          "slug": "promise-prototype-finally"
+        }
+      ]
     },
     {
       "title": "开始",
@@ -116,12 +184,34 @@ export const siteData = {
       "path": "/guide/vue/"
     },
     {
-      "title": "1",
+      "title": "2023百度暑期实习笔试编程",
       "frontmatter": {},
       "regularPath": "/guide/interview/interview.html",
       "relativePath": "guide/interview/interview.md",
       "key": "v-626b01ce",
-      "path": "/guide/interview/interview.html"
+      "path": "/guide/interview/interview.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "2023百度暑期实习笔试编程",
+          "slug": "_2023百度暑期实习笔试编程"
+        },
+        {
+          "level": 3,
+          "title": "一、输入数组a/b ,a:包含n个正整数(n>=1)，b:包含a数组中对应数字的标记（标记分为R/B两种），求a数组中标记不同的正整数的乘积之和。",
+          "slug": "一、输入数组a-b-a-包含n个正整数-n-1-b-包含a数组中对应数字的标记-标记分为r-b两种-求a数组中标记不同的正整数的乘积之和。"
+        },
+        {
+          "level": 3,
+          "title": "二、输入两个正整数a/x ,a,x>=1 ;求不大于x的正整数b，使a xor b 的值为最大。(xor为按位异或)",
+          "slug": "二、输入两个正整数a-x-a-x-1-求不大于x的正整数b-使a-xor-b-的值为最大。-xor为按位异或"
+        },
+        {
+          "level": 3,
+          "title": "三、输入一个形式为0.x的小数如（0.4221453）,求忽略去任何小数位置的数字后所能得到的最大数值。",
+          "slug": "三、输入一个形式为0-x的小数如-0-4221453-求忽略去任何小数位置的数字后所能得到的最大数值。"
+        }
+      ]
     },
     {
       "title": "Vue-cli",
@@ -259,94 +349,6 @@ export const siteData = {
       ]
     },
     {
-      "title": "一、Vuex是做什么的？",
-      "frontmatter": {},
-      "regularPath": "/guide/vue/VueX.html",
-      "relativePath": "guide/vue/VueX.md",
-      "key": "v-ef1ba42e",
-      "path": "/guide/vue/VueX.html",
-      "headers": [
-        {
-          "level": 2,
-          "title": "一、Vuex是做什么的？",
-          "slug": "一、vuex是做什么的"
-        },
-        {
-          "level": 3,
-          "title": "我们一般管理什么状态呢",
-          "slug": "我们一般管理什么状态呢"
-        },
-        {
-          "level": 2,
-          "title": "二、界面的状态管理",
-          "slug": "二、界面的状态管理"
-        },
-        {
-          "level": 3,
-          "title": "1.1单界面状态管理",
-          "slug": "_1-1单界面状态管理"
-        },
-        {
-          "level": 3,
-          "title": "1.2多界面状态管理",
-          "slug": "_1-2多界面状态管理"
-        },
-        {
-          "level": 2,
-          "title": "三、vuex核心概念",
-          "slug": "三、vuex核心概念"
-        },
-        {
-          "level": 3,
-          "title": "Mutation状态更新",
-          "slug": "mutation状态更新"
-        },
-        {
-          "level": 3,
-          "title": "Mutation提交风格",
-          "slug": "mutation提交风格"
-        },
-        {
-          "level": 3,
-          "title": "Mutation的响应式规则",
-          "slug": "mutation的响应式规则"
-        },
-        {
-          "level": 3,
-          "title": "Mutation常量",
-          "slug": "mutation常量"
-        },
-        {
-          "level": 3,
-          "title": "Mutation同步函数",
-          "slug": "mutation同步函数"
-        },
-        {
-          "level": 3,
-          "title": "Action的基本定义",
-          "slug": "action的基本定义"
-        },
-        {
-          "level": 3,
-          "title": "Modules的使用",
-          "slug": "modules的使用"
-        },
-        {
-          "level": 2,
-          "title": "四、项目结构",
-          "slug": "四、项目结构"
-        }
-      ]
-    },
-    {
-      "title": "HTPP",
-      "frontmatter": {},
-      "regularPath": "/guide/interview/http.html",
-      "relativePath": "guide/interview/http.md",
-      "key": "v-0b4c6cf3",
-      "path": "/guide/interview/http.html"
-    },
-    {
       "title": "简单认识Vue",
       "frontmatter": {},
       "regularPath": "/guide/vue/Vue.html",
@@ -438,6 +440,86 @@ export const siteData = {
           "level": 2,
           "title": "模块化开发",
           "slug": "模块化开发"
+        }
+      ]
+    },
+    {
+      "title": "一、Vuex是做什么的？",
+      "frontmatter": {},
+      "regularPath": "/guide/vue/VueX.html",
+      "relativePath": "guide/vue/VueX.md",
+      "key": "v-ef1ba42e",
+      "path": "/guide/vue/VueX.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "一、Vuex是做什么的？",
+          "slug": "一、vuex是做什么的"
+        },
+        {
+          "level": 3,
+          "title": "我们一般管理什么状态呢",
+          "slug": "我们一般管理什么状态呢"
+        },
+        {
+          "level": 2,
+          "title": "二、界面的状态管理",
+          "slug": "二、界面的状态管理"
+        },
+        {
+          "level": 3,
+          "title": "1.1单界面状态管理",
+          "slug": "_1-1单界面状态管理"
+        },
+        {
+          "level": 3,
+          "title": "1.2多界面状态管理",
+          "slug": "_1-2多界面状态管理"
+        },
+        {
+          "level": 2,
+          "title": "三、vuex核心概念",
+          "slug": "三、vuex核心概念"
+        },
+        {
+          "level": 3,
+          "title": "Mutation状态更新",
+          "slug": "mutation状态更新"
+        },
+        {
+          "level": 3,
+          "title": "Mutation提交风格",
+          "slug": "mutation提交风格"
+        },
+        {
+          "level": 3,
+          "title": "Mutation的响应式规则",
+          "slug": "mutation的响应式规则"
+        },
+        {
+          "level": 3,
+          "title": "Mutation常量",
+          "slug": "mutation常量"
+        },
+        {
+          "level": 3,
+          "title": "Mutation同步函数",
+          "slug": "mutation同步函数"
+        },
+        {
+          "level": 3,
+          "title": "Action的基本定义",
+          "slug": "action的基本定义"
+        },
+        {
+          "level": 3,
+          "title": "Modules的使用",
+          "slug": "modules的使用"
+        },
+        {
+          "level": 2,
+          "title": "四、项目结构",
+          "slug": "四、项目结构"
         }
       ]
     },
@@ -585,13 +667,6 @@ export const siteData = {
           "slug": "开发模式"
         }
       ]
-    },
-    {
-      "frontmatter": {},
-      "regularPath": "/guide/webpack/",
-      "relativePath": "guide/webpack/README.md",
-      "key": "v-4454162c",
-      "path": "/guide/webpack/"
     },
     {
       "title": "小程序的配置文件",
@@ -755,6 +830,13 @@ export const siteData = {
     },
     {
       "frontmatter": {},
+      "regularPath": "/guide/webpack/",
+      "relativePath": "guide/webpack/README.md",
+      "key": "v-4454162c",
+      "path": "/guide/webpack/"
+    },
+    {
+      "frontmatter": {},
       "regularPath": "/guide/weixin/",
       "relativePath": "guide/weixin/README.md",
       "key": "v-64d93d98",
@@ -842,6 +924,10 @@ export const siteData = {
             {
               "title": "handWrite",
               "path": "handWrite"
+            },
+            {
+              "title": "promise",
+              "path": "promise"
             }
           ]
         },
@@ -852,6 +938,16 @@ export const siteData = {
             {
               "title": "http",
               "path": "http"
+            }
+          ]
+        },
+        {
+          "title": "interview",
+          "collapsable": true,
+          "children": [
+            {
+              "title": "编程题",
+              "path": "interview"
             }
           ]
         }

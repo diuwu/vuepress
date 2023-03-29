@@ -52,7 +52,8 @@ module.exports = {
                     title:'手写题',
                     collapsable:true,
                     children:[
-                        {title:'handWrite',path:'handWrite'}
+                        {title:'handWrite',path:'handWrite'},
+                        {title:'promise',path:'promise'}
                     ]
                 },
                 {
@@ -61,7 +62,14 @@ module.exports = {
                     children:[
                         {title:'http',path:'http'}
                     ]
-                }
+                },
+                {
+                    title:'interview',
+                    collapsable:true,
+                    children:[
+                        {title:'编程题',path:'interview'}
+                    ]
+                },
             ],
             '/guide/algorithm/':[
                 {
