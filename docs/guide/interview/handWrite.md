@@ -134,4 +134,102 @@
     }
     ```
 
+## 手写防抖、节流
 
+### debounce
+
+* 每次触发定时器时取消上个定时器，然后重新触发定时器。
+
+* ```javascript
+  function debounce(func,delay,immediate=false){
+      let timer = null;
+      //记录状态
+      let isInvoke = false;
+      let result;
+  
+      const _debounce = (...args)=>{
+          //取消上一个定时器
+          if(timer) clearTimeout(timer);
+          
+          //第一次执行不延迟
+          if(!isInvoke && immediate) {
+              fn.apply(this,args);
+              isInvoke = true;
+              return;
+          }
+  
+          //设置定时器
+          timer = setTimeout(()=>{
+             result = fn.apply(this,args);
+              timer = null;
+              
+              //重置isInvoke
+              isInvoke = false;
+          },delay)
+          //返回结果
+          return result;
+      }
+      _debounce.cancel = function(){
+          if(timer) clearTimeout(timer);
+          
+          //取消时重置
+          isInvoke = false;
+          timer = null;
+      }
+      return _debounce;
+  }
+  ```
+
+  
+
+### throttle
+
+* 每次触发定时器，直到这个定时器结束之前无法再次触发
+
+* ```javascript
+  function throttle(fn,interval,options={leading:true,trailing:false}){
+      //开始时间
+      let startTime = 0;
+      let  timer = null;
+      let result;
+      const {leading,trailing} = options;
+      
+      const _throttle = function(...args){
+          //获取当前时间
+          const nowTime = new Date.getTime();
+          
+          //是否立即执行,使第一次不执行函数
+          if(!leading && startTime == 0){
+              startTime = nowTime;
+          }
+          //计算等待时间
+          const waitTime = interval-(nowTime-startTime);
+          //等待时间小于0,执行回调
+          if(waitTime<=0){
+              if(timer){
+                  clearTimeout(timer);
+                  timer=null;
+              }
+              result = fn.apply(this,args);
+              startTime = nowTime;
+          }
+          //设置最后一次执行函数
+          if(trailing && !timer){
+              timer = setTimeout(()=>{
+                  tiemr = null;
+                  startTime = !leading?0:new Date().getTime();
+                  result = fn.apply(this,args);
+              },interval)
+          }
+      }
+      //取消功能
+      _throttle.cancel = function(){
+          if(timer) clearTimeout(timer);
+          timer = null;
+          startTime = 0;
+      }
+      return _throttle;
+  }
+  ```
+
+  
