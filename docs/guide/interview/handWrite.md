@@ -232,4 +232,73 @@
   }
   ```
 
-  
+
+## 手写ajax
+
+```typescript
+interface Options {
+    url:string,
+    type?:"GET"|"POST"|"PUT",
+    data:any,
+    timeout?:number
+}
+
+    function formatUrl(obj){
+        let urlArr = [];
+        for(let key in obj){
+            urlArr.push(`${key}=${encodeURIComponent(obj[key])}`);
+        }
+        return urlArr.join("&");
+    }
+export function ajax(options:Options = {
+    url:"",
+    type:"GET",
+    data:{},
+    timeout:3000
+}){
+    return new Promise((resolve,reject)=>{
+        if(!options.url){
+            return;
+        }
+        const querystring = formatUrl(option.data);
+        let timer = null;
+        let xhr = null;
+        const onStateChange = ()=> {
+            xhr.onreadystatechange=()=>{
+                clearTimeout(timer);
+                if(xhr.readyState === 4){
+                    if(xhr.status >= 200 && xhr.status<300 || xhr.status === 304){
+                        resolve(xhr.responseText);
+                    }else {
+                        reject(xhr.status);
+                    }
+                }
+            }
+        }
+        if((window as any).XMLHEEPRequest){
+            xhr = new XMLHTTPRequest();
+        }else {
+            xhr  = new ActiveObject("Microsoft.HTTP");
+        }
+        
+        if(options.type.toUpperCase() === "GET"){
+            xhr.open("GET",`${options.url}?${queryString}`);
+            onStateChange();
+            xhr.send();
+        } else if(options.type.toUpperCase === "POST"){
+            xhr.open("POST",`${options.url}?${queryString}`);
+            xhr.setRequestHeader("ContentType","application/x-www-form-urlencode");
+            onStateChange();
+            xhr.send(options.data);
+        }
+        
+        if(options.timeout){
+            timer = setTimeout(()=>{
+                xhr.abort();
+                reject("Time out");
+            },options.timeout);
+        }
+    })
+}
+```
+

@@ -94,9 +94,82 @@
 | Expires          | 实体主体过期的日期时间 |
 | Last-Modified    | 资源的最后修改日期时间 |
 
+## 请求头ContentType的值
+
+* Content-Type用于标识请求中的媒体类型信息。
+* 格式为 type/subtype(;parameter)? type 。主类型/子类型;参数
+* **常见格式**
+  * text/html:  HTML格式
+  * **text/plain**:  纯文本格式
+  * text/xml:  XML格式
+  * image/gif:  gif图片格式
+  * image/jpeg:  jpg图片格式
+  * image/png:  png图片格式
+  * application/xhtml+xml:  XHTML格式
+  * apllication/xml:  XML格式
+  * apllication/atom+xml:  Atom XML聚合格式
+  * apllication/json:  JSON数据格式
+  * apllication/pdf:  pdf格式
+  * apllication:msword: Word文档格式
+  * apllication:octet-stream:  二进制流数据
+  * **apllication/x-www-form-urlencoded**:  （key1=val1&key2=val2格式）form表单默认的提交数据格式
+  * **multipart/form-data**:  表单上传文件用的格式,也可以上传键值对。最后都会转换成一条消息。
+
 ##  http2.0
 
+* http1.1对比：
+
+  * http1.1之前每个请求都要新建一个链接。
+
+  * http1.1的keep-alive字段可以复用原有的TCP链接，Chrome浏览器可允许6个并发数，但是同一个TCP链接通道的两个请求可能存在阻塞等待的情况，会阻塞后面队列的其他请求。
+
 * 压缩、多路复用、TLS义务化、协商、客户端pull,服务端push、流量控制、WebSocket
+
+* **二进制分帧，多路复用**：
+
+  * 二进制分帧在TLS协议之上抽象了一层，传输的时候把一个请求拆分成多个小的数据包，多个请求拆成多个数据包一起发送，在服务端再根据数据包的序号进行拼接。
+  * 二进制分帧层的三个结构
+    * frame 是最小的传输单位
+    * message 是逻辑层面的东西，表示是请求message还是响应message，一个message包含多个frame
+    * stream 是最大粒度的包，包含唯一性字段和优先级信息，包含message
+  * 多路复用的过程：
+    * http2.0将数据包拆分成多个frame, 组成一个个stream，在一条双向tcp管道中传输。
+  * http2.0把请求的数据使用二进制进行传输,减少文本转义的额外性能开销。
+
+* **头部压缩**
+
+  * http2.0 会维护一张头部信息哈希表，同时存储在客户端和服务端，每次传输的时候，如果发现传输的头部信息在哈希表中已经存在，则只传哈希表的index值，不再传输具体的内容，如果有新的头部字段，这张哈希表也会动态的在客户端以及服务端增加新值，后续再有相同字段的时候，将不会再传输，只会传哈希表的index值。
+
+* **服务端推送**
+
+  * 区别于websocket，http2.0 根据文件中的关联的其他文件，预判并主动推送下次请求中必须的数据。
+
+## https
+
+* https加密在HTTP和TCP层之间加了一层SSL/TLS协议进行加密。
+
+### 一、SSL证书的获取
+
+* 认证中心CA给个人颁发证书，包含以下内容：
+  * 数字签名（CA机构使用私钥对服务器公钥进行加密，生成数字签名）
+  * 摘要（对服务器公钥用Hash算法进行加密，生成摘要）
+  * 哈希算法（生成摘要的哈希算法）
+
+### 二、SSL/TLS 握手过程 
+
+* 1.客户端发送 **clilent hello 报文**开始SSL通信。报文包含客户端支持的TLS版本和密码组合（所使用的加密算法及密钥长度）。
+* 2.服务器发送 **server hello 报文**进行回应。同样包含TSL版本和加密组件。
+* 3.服务器发送**certificate报文**，包含**公开密钥证书**。.
+* 4.服务器发送**server hello done** **报文** ，通知客户端最初阶段SSL握手协商结束。
+* 5.第一次握手结束，客户端对服务器发来的证书进行校验（使用CA公钥对证书进行解密，获取服务器公钥），校验完成后。客户端发送**client key exchange报文**。报文包含随机密码串**pre-master-secrect**，报文用步骤3的服务器公开密钥进行加密，只有对应私钥才能解密。
+* 6.客户端发送**change cipher spec报文**。报文提示服务端之后采用pre-master-secrect密钥加密。
+* 7.客户端发送**finished报文**，报文包含连接过程的整体校验值，经过了**共享密钥key**加密，看服务器能否解密该报文。
+* 服务器用私钥解密pre-master-secrect ,服务器和客户端用相同的算法生成相同的**共享密钥key**。
+* 8.服务器发送**change cipher spec报文**。
+* 9.服务器发送**finished报文**。
+* 10.服务器和客户端交换完毕finished报文，SSL连接就算建立完成。此处开始进行http请求。
+* 11.发送http响应
+* 12.最后客户端断开连接。
 
 ## Web攻击技术
 
@@ -107,6 +180,10 @@
   * 利用虚假输入表单骗取用户个人信息
   * 用脚本窃取用户的Cookie值，发送恶意请求
   * 显示伪造的文章或图片
+* 解决方法：
+  * 使用xss插件
+  * 在表单提交或url参数传递前，对需要的参数进行过滤。
+  * 检查用户输入是否有非法内容。如<>" ' % : () & +
 
 ### 二、SQL注入攻击
 
@@ -132,6 +209,14 @@
 ### 六、跨站点请求伪造CSRF
 
 * 攻击者通过设计好的陷阱，强制对已完成认证的用户进行非预期的个人信息或设定信息等某些状态更新。
+
+* 简单的说攻击者盗用你的身份信息发送恶意请求。用户登录了网站A没有退出浏览了网站B,网站B的恶意请求携带的A的Cookie信息，对网站A发起请求。
+
+* 解决方法
+
+  * 检测http Referer字段，即网站的请求源地址。
+
+  * 对用户凭证进行校验处理，使用token身份验证。
 
 ### 七、Dos攻击
 
