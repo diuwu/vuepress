@@ -129,4 +129,138 @@
   }
   ```
 
+
+## 排序算法
+
+### 冒泡排序
+
+* 比较相邻的元素，如果第一个比第二个大，则交换位置，重复以上步骤。
+
+* 时间:O(n^2)
+
+* ```javascript
+  function BubbleSort(arr){
+      for(let i = 0;i < arr.length;i++){
+          for(let j = 0;j < arr.length-i-1;j++){
+              if(arr[j] > arr[j+1]){
+                  temp = arr[j];
+                  arr[j] = arr[j+1];
+                  arr[j+1] = temp;
+              }
+          }
+      }
+  }
+  ```
+
+  
+
+### 选择排序
+
+* 寻找无序区最小元素，排到有序区的末尾。
+
+* 时间：O(n^2)
+
+* ```javascript
+  function selection_sort(arr){
+      for(let i = 0;i < arr.length-1;i++){ //有序区的末尾
+          let min = i;
+          for(let j = i+1;j<arr.length){ //无序区
+              if(arr[j]<arr[min]){
+                  min = j; // 记录最小值
+              }
+          }
+          swap(arr[i],arr[j]);
+          
+      }
+  }
+  ```
+
+### 插入排序
+
+* 在有序区从前往后扫描，找到相应位置插入无序区的元素。
+
+* 时间：O(n^2)
+
+* ```javascript
+  function insert_sort(arr){
+      let i,j,key;
+      for(i = 1;i<arr.length;i++){
+          key = arr[i]; //要插入的无序区元素
+          j = i-1;
+          while(j>=0 && arr[j]>key){
+              arr[j+1] = arr[j]; // 有序区的元素后移
+              j--;
+          }
+          arr[j+1] = key;
+      }
+  }
+  ```
+
+  
+
+### 希尔排序
+
+* 将无序区序列分割成若干子序列分别进行插入排序，再对整体进行一次插入排序；
+
+* 时间：O(nlogn)
+
+* ```javascript
+  function shell_sort(arr){
+      let inc = len;
+      let i,j,k;
+      do {
+          inc = inc / 3 + 1; // 分组的增量
+          for(i=0;i<inc;i++){
+              for(j=i+inc;j<arr.length;j+=inc){
+                  let key = arr[j];
+                  for(k=j-inc;k>=0 && arr[k]>key;k-=inc){
+                      arr[k+inc] = arr[k];
+                  }
+                  arr[k+inc] = key;
+              }
+          }
+      } while(inc > 1);
+  }
+  ```
+
+  
+
+### 快速排序
+
+* 挑选一个元素为基准值，比基准值小的元素放基准值前，比基准值大的元素放基准值后。对前后分区递归操作。
+
+* ```javascript
+  function quickSort(arr,start,end){
+      if(start > end){
+          return;
+      }
+      let i=start;
+      let j=end;
+      let base = arr[i];
+      while(i<j){
+          //从右往左找比基准值小的数，交换位置
+          while(i<j && arr[j]>=base){
+              j--;
+          }
+          if(i<j){
+              arr[i] = arr[j];
+              i++;
+          }
+          //从左往右找比基准值大的数，交换位置
+          while(i<j && arr[i]<base){
+              i++;
+          }
+          if(i<j){
+              arr[j] = arr[i];
+              j--;
+          }
+      }
+      //分区结束，基准值放到i 的位置
+      arr[i] = base;
+      //递归左右分区
+      quickSort(arr,start,i-1);
+      quickSort(arr,i+1,end);
+  }
+  ```
+
   

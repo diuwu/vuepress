@@ -45,7 +45,7 @@ module.exports = {
                     children:[
                         {title:'webpack',path:'Webpack'}
                     ]
-                }
+                },
             ],
             '/guide/interview/':[
                 {
@@ -68,6 +68,13 @@ module.exports = {
                     collapsable:true,
                     children:[
                         {title:'编程题',path:'interview'}
+                    ]
+                },
+                {
+                    title:'webpack',
+                    collapsable:true,
+                    children:[
+                        {title:'面试题',path:'webpack'}
                     ]
                 },
             ],

@@ -302,3 +302,110 @@ export function ajax(options:Options = {
 }
 ```
 
+## 手写new操作符
+
+* ```javascript
+  function myNew(fn,...args){
+      //基于原型链创建新对象
+      let newObi = Object.create(fn.prototype);
+      //添加属性到新obj上，获取构造函数返回值
+      let res = fn.apply(newObj,args);
+      //如果有返回值，返回返回值，没有则返回新对象
+      return res && typeof res == 'object'?res:newObj;
+  }
+  ```
+
+  
+
+## 手写继承
+
+```javascript
+function Parent(name){
+    this.name = 'ming';
+    this.arr  =[1,2,3];
+}
+
+Parent.prototype.say = () =>{
+    console.log('Hi');
+}
+
+function Child(name,age){
+    Parent.call(this,name);
+    this.age = age;
+}
+
+Child.prototype = Object.create(Parent.prototype);
+Child.prototype.constructor = Child;
+
+//es6继承
+class Parent {
+    constructor(name){
+        this.name = name;
+    }
+}
+
+class Child extends Parent{
+    constructor(name,age){
+        super(name);
+        this.age = age;
+    }
+}
+```
+
+## 手写实现sleep
+
+* 方法一promise配合await
+
+  ```javascript
+  (async ()=>{
+      console.log('start');
+      await sleep(3000);
+      console.log('end');
+      
+      function sleep(time){
+  		return new Promise(res=>{
+              setTimeout(()=>{
+                  res();
+              },time);
+          })        
+      }
+  })();
+  ```
+
+  
+
+* 方法二堵塞进程
+
+  ```javascript
+  (async () => {
+      console.log('start');
+      await sleep(3000);
+      console.log('end');
+      
+      function sleep(time){
+          let t = Date.now();
+          while(Date.now() - t <= time){
+              continue;
+          }
+      }
+  })();
+  ```
+
+## 手写instanceof
+
+* instanceof运算符检测构造函数的prototype属性是否出现在某个实例对象的原型链上。
+
+* ```javascript
+  const myInstancef(left,right){
+      //基本数据类型和null返回false
+      if(!['function','object'].includes(typeof left) | left == null) return false;
+      let proto = Object.getPrototypeOf(left);
+      while(true){
+          if(proto === null) return false;
+          if(proto === right.prototype) return true;
+          proto = Object.getPrototypeOf(proto);
+      }
+  }
+  ```
+
+  
